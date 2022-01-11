@@ -1,4 +1,5 @@
 import React, { useState, useReducer, Reducer } from 'react'
+import data from '../data'
 
 type State = string[]
 enum ActionKind {
@@ -31,11 +32,7 @@ const toolReducer: Reducer<State, Action> = (tools: string[], action) => {
 
 const UseReducer = () => {
   const [newTool, setNewTool] = useState('')
-  const [tools, interactTools] = useReducer(toolReducer, [
-    'useState',
-    'useReducer',
-    'MobX',
-  ])
+  const [tools, interactTools] = useReducer(toolReducer, data.map(item => item.title))
 
   const addTool = () => {
     interactTools({ payload: newTool, type: ActionKind.Add })

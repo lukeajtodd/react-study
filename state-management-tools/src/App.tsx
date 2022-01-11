@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 import UseState from './pages/UseState'
 import UseReducer from './pages/UseReducer'
+import UseContext from './pages/UseContext'
+
+import { ToolsProvider } from './helpers/Context'
 
 const App = () => {
   return (
@@ -18,12 +21,16 @@ const App = () => {
                 <li className="text-md text-white tracking-wide cursor-pointer hover:border-white hover:border-b-2 border-b-2 border-transparent transition duration-300">
                   <Link to="/use-reducer">useReducer</Link>
                 </li>
+                <li className="text-md text-white tracking-wide cursor-pointer hover:border-white hover:border-b-2 border-b-2 border-transparent transition duration-300">
+                  <Link to="/use-context">Context</Link>
+                </li>
               </ul>
             </div>
           </nav>
           <Routes>
             <Route path="/" element={<UseState />} />
             <Route path="/use-reducer" element={<UseReducer />} />
+            <Route path="/use-context" element={<ToolsProvider><UseContext /></ToolsProvider>} />
           </Routes>
         </div>
       </Router>

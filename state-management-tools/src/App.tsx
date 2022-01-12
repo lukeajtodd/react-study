@@ -5,6 +5,9 @@ import UseState from './pages/UseState'
 import UseReducer from './pages/UseReducer'
 import UseContext from './pages/UseContext'
 
+import ReduxProvider from './pages/Redux/store'
+import Redux from './pages/Redux'
+
 import { ToolsProvider } from './helpers/Context'
 
 const App = () => {
@@ -24,6 +27,9 @@ const App = () => {
                 <li className="text-md text-white tracking-wide cursor-pointer hover:border-white hover:border-b-2 border-b-2 border-transparent transition duration-300">
                   <Link to="/use-context">Context</Link>
                 </li>
+                <li className="text-md text-white tracking-wide cursor-pointer hover:border-white hover:border-b-2 border-b-2 border-transparent transition duration-300">
+                  <Link to="/redux">Redux</Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -31,6 +37,7 @@ const App = () => {
             <Route path="/" element={<UseState />} />
             <Route path="/use-reducer" element={<UseReducer />} />
             <Route path="/use-context" element={<ToolsProvider><UseContext /></ToolsProvider>} />
+            <Route path="/redux" element={<ReduxProvider><Redux /></ReduxProvider>} />
           </Routes>
         </div>
       </Router>

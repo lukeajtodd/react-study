@@ -8,6 +8,9 @@ import UseContext from './pages/UseContext'
 import ReduxProvider from './pages/Redux/store'
 import Redux from './pages/Redux'
 
+import Recoil from './pages/Recoil'
+import { RecoilRoot } from 'recoil'
+
 import { ToolsProvider } from './helpers/Context'
 
 const App = () => {
@@ -30,6 +33,9 @@ const App = () => {
                 <li className="text-md text-white tracking-wide cursor-pointer hover:border-white hover:border-b-2 border-b-2 border-transparent transition duration-300">
                   <Link to="/redux">Redux</Link>
                 </li>
+                <li className="text-md text-white tracking-wide cursor-pointer hover:border-white hover:border-b-2 border-b-2 border-transparent transition duration-300">
+                  <Link to="/recoil">Recoil</Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -38,6 +44,7 @@ const App = () => {
             <Route path="/use-reducer" element={<UseReducer />} />
             <Route path="/use-context" element={<ToolsProvider><UseContext /></ToolsProvider>} />
             <Route path="/redux" element={<ReduxProvider><Redux /></ReduxProvider>} />
+            <Route path="/recoil" element={<RecoilRoot><Recoil /></RecoilRoot>} />
           </Routes>
         </div>
       </Router>

@@ -19,10 +19,10 @@ const UseContext = () => {
       className="flex justify-center items-center"
     >
       <div>
-        <h1 className="text-2xl mb-4">useReducer</h1>
+        <h1 className="text-2xl mb-4">Context</h1>
         <ul>
-          {tools.map((tool) => (
-            <li>{tool}</li>
+          {tools.map((tool, index) => (
+            <li key={index}>{tool}</li>
           ))}
         </ul>
         <button className="mt-4" onClick={popTool}>
